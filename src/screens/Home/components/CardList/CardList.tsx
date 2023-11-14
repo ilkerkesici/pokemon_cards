@@ -2,13 +2,13 @@ import React, {useCallback} from 'react';
 import {FlatList} from 'react-native';
 import {PokemonCard} from 'types/models';
 import useCardListHook from './useCardListHook';
-import {Text} from 'components/CoreComponents';
+import CardListItem from './CardListItem';
 
 export default function CardList() {
   const {cards} = useCardListHook();
 
   const renderItem = useCallback(
-    ({item}: {item: PokemonCard}) => <Text>{item.name}</Text>,
+    ({item}: {item: PokemonCard}) => <CardListItem data={item} />,
     [],
   );
 

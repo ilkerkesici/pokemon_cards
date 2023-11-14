@@ -15,9 +15,10 @@ const {width} = Dimensions.get('window');
 interface Props extends ImageProps, DesignProps {
   source: {uri: string} | ImageSourcePropType;
   fullWidthContain?: boolean;
+  resizeMode?: 'contain' | 'cover';
 }
 
-const Image: React.FC<Props> = props => {
+export default function Image(props: Props) {
   const [dimensions, setDimensions] = useState({width: 0, height: 0});
   const propStyle = designPropToStyle(props);
   const style: any = {...propStyle, ...(props.style as any)};
@@ -52,8 +53,7 @@ const Image: React.FC<Props> = props => {
           height: e.nativeEvent.height,
         });
       }}
+      resizeMode={props.resizeMode}
     />
   );
-};
-
-export default Image;
+}

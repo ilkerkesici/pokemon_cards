@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <ScreenContainer>
-      <Header title={i18n.t('home.title')} showHeaderShadow />
+      <Header title={i18n.t('home.title')} />
       {MemorizedCardList}
     </ScreenContainer>
   );

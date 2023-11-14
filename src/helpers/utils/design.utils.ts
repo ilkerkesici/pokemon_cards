@@ -93,6 +93,7 @@ const designPropValidKeys: Record<string, boolean> = {
   flexDirection: true,
   gap: true,
   minHeight: true,
+  borderWidth: true,
 };
 
 const textDesignPropValidKeys: Record<string, boolean> = {

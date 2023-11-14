@@ -12,7 +12,7 @@ export interface Props extends BlockProps, DesignProps {
 export default function Block({
   children,
   onPress,
-  backgroundColor,
+  backgroundColor = 'transparent',
   borderColor = 'transparent',
   ...rest
 }: Props) {
@@ -32,15 +32,16 @@ export default function Block({
         onPress={onPress}
         style={[
           designProps,
-          borderStyle,
           {backgroundColor: backgroundColorHex},
+          borderStyle,
         ]}>
         {children}
       </TouchableOpacity>
     );
   }
   return (
-    <View style={[designProps, {backgroundColor: backgroundColorHex}]}>
+    <View
+      style={[designProps, {backgroundColor: backgroundColorHex}, borderStyle]}>
       {children}
     </View>
   );

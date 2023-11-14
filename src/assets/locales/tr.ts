@@ -9,7 +9,7 @@ export default {
     go_to_account: 'Hesabıma git',
     search: 'Ara',
   },
-  account: {
-    title: 'Hesabım',
+  card_detail: {
+    title: 'Kart Detayı',
   },
 };

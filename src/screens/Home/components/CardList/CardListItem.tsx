@@ -5,9 +5,14 @@ import {PokemonCard} from 'types/models';
 
 interface Props {
   data: PokemonCard;
+  onPress: (card: PokemonCard) => void;
 }
 
-export default function CardListItem({data}: Props) {
+export default function CardListItem({data, onPress}: Props) {
+  const onPressItem = () => {
+    onPress(data);
+  };
+
   return (
     <Block fill marginBottom={DEFAULT_SCREEN_HORIZONTAL_PADDING}>
       <Block
@@ -15,7 +20,8 @@ export default function CardListItem({data}: Props) {
         alignItems="center"
         borderRadius={10}
         borderWidth={1}
-        borderColor="neutral.400">
+        borderColor="neutral.400"
+        onPress={onPressItem}>
         <Image
           width={150}
           height={240}

@@ -5,11 +5,13 @@ import useCardListHook from './useCardListHook';
 import CardListItem from './CardListItem';
 
 export default function CardList() {
-  const {cards} = useCardListHook();
+  const {cards, onPressCard} = useCardListHook();
 
   const renderItem = useCallback(
-    ({item}: {item: PokemonCard}) => <CardListItem data={item} />,
-    [],
+    ({item}: {item: PokemonCard}) => (
+      <CardListItem onPress={onPressCard} data={item} />
+    ),
+    [onPressCard],
   );
 
   return (

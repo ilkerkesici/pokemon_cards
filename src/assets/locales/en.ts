@@ -9,7 +9,7 @@ export default {
     go_to_account: 'Go to account',
     search: 'Search',
   },
-  account: {
-    title: 'Account',
+  card_detail: {
+    title: 'Card Detail',
   },
 };

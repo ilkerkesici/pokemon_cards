@@ -5,7 +5,7 @@ import {
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 import {RootStackParamList} from './Router.type';
-import {Account, Home, Splash} from 'screens';
+import {CardDetail, Home, Splash} from 'screens';
 
 const MainNavigator = createNativeStackNavigator<RootStackParamList>();
 
@@ -33,8 +33,8 @@ export default function Router() {
         />
         <MainNavigator.Screen
           options={screenOptions}
-          name="ACCOUNT"
-          component={Account}
+          name="CARD_DETAIL"
+          component={CardDetail}
         />
       </MainNavigator.Navigator>
     </NavigationContainer>

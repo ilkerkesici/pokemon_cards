@@ -17,15 +17,14 @@ class ApiHelper {
       headerParameters.Authorization = `Bearer ${SessionHelper.token}`;
     }
 
-    return {headers: headerParameters, params: {}};
+    return {headers: headerParameters};
   };
 
-  async get<T>(endpoint: string, params: any): Promise<T | NetworkError> {
+  async get<T>(endpoint: string): Promise<T | NetworkError> {
     try {
       const options = this.getOptions();
       const response = await axios.get(`${BASE_URL}${endpoint}`, {
         ...options,
-        params: {...options.params, ...params},
       });
       return response.data;
     } catch (error) {

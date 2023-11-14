@@ -15,6 +15,17 @@ class ApiEndpointHelper {
 
     return result;
   };
+
+  getCard = async (cardId: string) => {
+    const result = await APIHelper.get<{
+      data: PokemonCard;
+    }>(`/v2/cards/${cardId}`);
+    if (!result || result instanceof NetworkError) {
+      return;
+    }
+
+    return result.data;
+  };
 }
 
 export const APIEndpointHelper = new ApiEndpointHelper();

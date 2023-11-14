@@ -1,24 +1,31 @@
-import {RouteProp} from '@react-navigation/native';
 import HeaderWithScrollView from 'components/Header/HeaderWithScrollView';
-import {RootStackParamList} from 'containers/Router/Router.type';
 import ScreenContainer from 'containers/ScreenContainer/ScreenContainer';
 import useTranslation from 'helpers/hooks/useTranslation';
 import React from 'react';
+import {CardDetailPageProps} from './CardDetail.type';
+import useCardDetailHook from './useCardDetailHook';
+import {Block, Display, Image, Spinner} from 'components/CoreComponents';
 
-type StackRouteProp = RouteProp<RootStackParamList, 'CARD_DETAIL'>;
-
-interface Props {
-  route: StackRouteProp;
-}
-
-export default function CardDetail({route}: Props) {
+export default function CardDetail(props: CardDetailPageProps) {
   const {i18n} = useTranslation();
-
-  const {card} = route.params;
+  const {cardDetail, loading} = useCardDetailHook(props);
+  const {card} = props.route.params;
 
   return (
     <ScreenContainer>
-      <HeaderWithScrollView headerProps={{title: card.name, back: true}} />
+      <HeaderWithScrollView headerProps={{title: card.name, back: true}}>
+        <Display show={cardDetail}>
+          <Block fill>
+            <Image
+              width={300}
+              height={500}
+              source={{uri: cardDetail?.images.large}}
+              resizeMode="contain"
+            />
+          </Block>
+        </Display>
+      </HeaderWithScrollView>
+      <Spinner loading={loading} />
     </ScreenContainer>
   );
 }

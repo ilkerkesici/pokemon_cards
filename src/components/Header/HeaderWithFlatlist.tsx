@@ -46,7 +46,6 @@ export default function HeaderWithFlatList({
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="always"
         scrollEventThrottle={16}
-        stickyHeaderIndices={[0]}
         data={data}
         renderItem={renderItem}
         keyExtractor={keyExtractor}

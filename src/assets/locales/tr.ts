@@ -14,5 +14,7 @@ export default {
     abilities: 'Yetenekleri',
     attacts: 'Ataklar',
     damage: 'Hasar',
+    remove: 'Kaldır',
+    save: 'Kaydet',
   },
 };

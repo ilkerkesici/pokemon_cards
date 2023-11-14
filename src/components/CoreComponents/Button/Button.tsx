@@ -58,7 +58,6 @@ export default function Button({
     }
     onPress && onPress();
   };
-  console.log(textColors[type]);
 
   return (
     <TouchableOpacity

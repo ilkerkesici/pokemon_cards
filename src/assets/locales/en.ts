@@ -14,5 +14,7 @@ export default {
     abilities: 'Abilities',
     attacts: 'Attacts',
     damage: 'Damage',
+    remove: 'Delete card',
+    save: 'Save card',
   },
 };

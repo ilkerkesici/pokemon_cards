@@ -4,3 +4,7 @@ export interface SettingState {
   theme: ThemeType;
   language: LanguageType;
 }
+
+export interface PokemonCardState {
+  records: string[];
+}

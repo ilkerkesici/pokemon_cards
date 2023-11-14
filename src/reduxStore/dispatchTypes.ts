@@ -1,6 +1,6 @@
 // Setting Actions
 
-import {SettingActionTypes} from './types';
+import {PokemonCardRecordActionTypes, SettingActionTypes} from './types';
 import {ThemeType, LanguageType} from 'types/setting';
 
 export interface SetThemeAction {
@@ -13,4 +13,12 @@ export interface SetLanguageAction {
   payload: LanguageType;
 }
 
+// Pokemon Card Actions
+export interface SetSavedRecordsAction {
+  type: PokemonCardRecordActionTypes.setSavedRecords;
+  payload: string[];
+}
+
 export type AllSettingActions = SetThemeAction | SetLanguageAction;
+
+export type AllPokemonCardActions = SetSavedRecordsAction;

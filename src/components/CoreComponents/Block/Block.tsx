@@ -14,6 +14,7 @@ export default function Block({
   onPress,
   backgroundColor = 'transparent',
   borderColor = 'transparent',
+  style,
   ...rest
 }: Props) {
   const [backgroundColorHex, borderColorHex] = useThemeColor([
@@ -34,6 +35,7 @@ export default function Block({
           designProps,
           {backgroundColor: backgroundColorHex},
           borderStyle,
+          style,
         ]}>
         {children}
       </TouchableOpacity>
@@ -41,7 +43,12 @@ export default function Block({
   }
   return (
     <View
-      style={[designProps, {backgroundColor: backgroundColorHex}, borderStyle]}>
+      style={[
+        designProps,
+        {backgroundColor: backgroundColorHex},
+        borderStyle,
+        style,
+      ]}>
       {children}
     </View>
   );

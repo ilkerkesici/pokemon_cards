@@ -1,4 +1,5 @@
 import {ColorType} from 'assets/colors';
+import {ViewStyle} from 'react-native';
 
 export type ThemeType = 'dark' | 'light' | 'system';
 
@@ -91,6 +92,7 @@ export interface Alignment {
 export interface BlockProps extends Alignment {
   flex?: number;
   gap?: SpaceSizes;
+  style?: ViewStyle | ViewStyle[];
 }
 
 export interface FillmentDesignProps {

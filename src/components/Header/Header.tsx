@@ -21,7 +21,10 @@ export const Header = ({
   headerContainerStyle,
   subContainerStyle,
 }: HeaderProps) => {
-  const [backgroundColor] = useThemeColor(['custom-wb']);
+  const [backgroundColor, borderBottomColor] = useThemeColor([
+    'custom-wb',
+    'neutral.300',
+  ]);
   const navigation = useNavigation<RootNavigation>();
   const safeAreaInset = useSafeAreaInsets();
 
@@ -29,6 +32,8 @@ export const Header = ({
     paddingTop: safeAreaInset?.top ? safeAreaInset.top + 16 : 16,
     alignSelf: 'stretch',
     backgroundColor,
+    borderBottomWidth: 1,
+    borderBottomColor: borderBottomColor,
   };
   const onPressBack = () => {
     navigation.goBack();

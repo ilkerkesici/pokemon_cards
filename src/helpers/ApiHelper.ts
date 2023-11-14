@@ -4,6 +4,7 @@ import {SessionHelper} from './SessionHelper';
 import NetworkError from './errors/NetworkError';
 import {i18n} from 'constants/i18n';
 import {BASE_URL} from '@env';
+import MockApi from './MockApi';
 
 class ApiHelper {
   private getOptions = (): AxiosRequestConfig => {
@@ -22,10 +23,16 @@ class ApiHelper {
 
   async get<T>(endpoint: string): Promise<T | NetworkError> {
     try {
+      const result = MockApi.getResult(endpoint);
+
+      if (result) {
+        return result;
+      }
       const options = this.getOptions();
       const response = await axios.get(`${BASE_URL}${endpoint}`, {
         ...options,
       });
+      MockApi.setResult(endpoint, response.data);
       return response.data;
     } catch (error) {
       return new NetworkError('Server Error');

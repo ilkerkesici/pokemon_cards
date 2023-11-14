@@ -1,4 +1,4 @@
-interface PokemonCardAttact {
+export interface PokemonCardAttact {
   convertedEnergyCost: number;
   cost: string[];
   damage: string;

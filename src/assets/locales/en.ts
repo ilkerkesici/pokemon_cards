@@ -11,5 +11,8 @@ export default {
   },
   card_detail: {
     title: 'Card Detail',
+    abilities: 'Abilities',
+    attacts: 'Attacts',
+    damage: 'Damage',
   },
 };

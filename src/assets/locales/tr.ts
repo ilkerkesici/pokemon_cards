@@ -11,5 +11,8 @@ export default {
   },
   card_detail: {
     title: 'Kart Detayı',
+    abilities: 'Yetenekleri',
+    attacts: 'Ataklar',
+    damage: 'Hasar',
   },
 };

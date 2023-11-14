@@ -16,5 +16,6 @@ export default {
     damage: 'Damage',
     remove: 'Delete card',
     save: 'Save card',
+    saved: 'Saved',
   },
 };

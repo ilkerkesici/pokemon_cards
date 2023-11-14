@@ -16,5 +16,6 @@ export default {
     damage: 'Hasar',
     remove: 'Kaldır',
     save: 'Kaydet',
+    saved: 'Kaydedildi',
   },
 };

@@ -31,10 +31,11 @@ export default function Button({
   type = 'outline',
   iconProps,
   loading,
+  backgroundColor = 'primary.500',
   ...rest
 }: Props) {
   const [filledBg, outlineBg] = useThemeColor([
-    'primary.500',
+    backgroundColor,
     'transparent',
     'white',
     'primary.500',

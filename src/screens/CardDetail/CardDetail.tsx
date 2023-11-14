@@ -9,6 +9,7 @@ import {
   Display,
   Image,
   Spinner,
+  Text,
 } from 'components/CoreComponents';
 import Attacts from './components/Attacts/Attacts';
 import {i18n} from 'constants/i18n';
@@ -30,6 +31,11 @@ export default function CardDetail(props: CardDetailPageProps) {
               source={{uri: cardDetail?.images.large}}
               resizeMode="contain"
             />
+            <Display show={isTheCardSaved}>
+              <Block padding={5} borderRadius={4} backgroundColor="green.400">
+                <Text color="white">{i18n.t('card_detail.saved')}</Text>
+              </Block>
+            </Display>
           </Block>
           <Attacts attacts={cardDetail?.attacks} />
         </Display>
@@ -41,6 +47,7 @@ export default function CardDetail(props: CardDetailPageProps) {
           )}
           onPress={onPressButton}
           type={'filled'}
+          backgroundColor={isTheCardSaved ? 'red.500' : 'primary.500'}
         />
       </Block>
       <Spinner loading={loading} />

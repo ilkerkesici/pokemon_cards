@@ -3,8 +3,10 @@ import axios, {AxiosRequestConfig} from 'axios';
 import {SessionHelper} from './SessionHelper';
 import NetworkError from './errors/NetworkError';
 import {i18n} from 'constants/i18n';
-import {BASE_URL} from '@env';
+// import {BASE_URL} from '@env';
 import MockApi from './MockApi';
+
+const BASE_URL = 'https://api.pokemontcg.io'; // This endpoint should be in the .env file. However, I put it here because of the ease the running the project.
 
 class ApiHelper {
   private getOptions = (): AxiosRequestConfig => {
